@@ -1,0 +1,661 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--pink:#f3d5dc;
+--light:#fff5f2;
+--cream:#fffaf5;
+--paper:#fffdf9;
+--burgundy:#742f43;
+--dark:#3e242c;
+--rose:#b85d77;
+--gold:#ad845f;
+--shadow:rgba(65,25,38,.18)
+}
+
+html{scroll-behavior:smooth}
+
+body{
+font-family:"Playfair Display",serif;
+color:var(--dark);
+background:var(--pink);
+min-height:100vh;
+background-image:
+linear-gradient(rgba(255,238,241,.5),rgba(255,238,241,.5)),
+url("../guides/apology.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed
+}
+
+button{font-family:inherit}
+
+.apology-page{
+min-height:100vh;
+padding-bottom:60px
+}
+
+.apology-header{
+height:64px;
+padding:0 35px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(255,250,245,.94);
+border-bottom:1px solid rgba(116,47,67,.13);
+position:sticky;
+top:0;
+z-index:20;
+backdrop-filter:blur(8px)
+}
+
+.home{
+display:flex;
+align-items:center;
+gap:8px;
+color:var(--burgundy);
+text-decoration:none;
+font-size:13px;
+transition:.3s
+}
+
+.home:first-letter{font-size:22px}
+.home:hover{transform:translateX(3px)}
+
+.header-title{
+font-family:"Caveat",cursive;
+font-size:28px;
+color:var(--burgundy)
+}
+
+.header-label{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold)
+}
+
+.intro{
+max-width:650px;
+margin:0 auto;
+padding:80px 25px 65px;
+text-align:center;
+position:relative
+}
+
+.tape{
+width:110px;
+height:25px;
+position:absolute;
+top:48px;
+left:50%;
+transform:translateX(-50%) rotate(-2deg);
+background:rgba(184,93,119,.28);
+box-shadow:0 2px 4px rgba(0,0,0,.08)
+}
+
+.intro>span{
+font-size:8px;
+letter-spacing:3px;
+color:var(--gold)
+}
+
+.intro h1{
+margin:12px 0 17px;
+font-family:"Caveat",cursive;
+font-size:67px;
+font-weight:500;
+line-height:.85;
+color:var(--burgundy)
+}
+
+.intro h1 i{
+font-style:normal;
+color:var(--rose)
+}
+
+.intro p{
+max-width:520px;
+margin:auto;
+font-size:12px;
+line-height:1.9;
+color:#65414b
+}
+
+.little-heart{
+margin-top:20px;
+font-size:24px;
+color:var(--rose);
+animation:heartbeat 2s infinite
+}
+
+@keyframes heartbeat{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.15)}
+}
+
+.apology-board{
+max-width:1050px;
+margin:auto;
+padding:40px 35px 50px;
+background:rgba(255,247,242,.86);
+box-shadow:0 15px 45px var(--shadow);
+position:relative
+}
+
+.board-heading{
+display:flex;
+justify-content:space-between;
+align-items:end;
+margin-bottom:30px;
+border-bottom:1px solid rgba(116,47,67,.16);
+padding-bottom:17px
+}
+
+.board-heading small{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold)
+}
+
+.board-heading h2{
+margin-top:5px;
+font-family:"Caveat",cursive;
+font-size:32px;
+font-weight:500;
+color:var(--burgundy)
+}
+
+.progress{
+font-family:"Caveat",cursive;
+font-size:22px;
+color:var(--burgundy)
+}
+
+.progress span{
+font-size:28px;
+font-weight:700
+}
+
+.apology-cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px
+}
+
+.apology-card{
+min-height:250px;
+padding:28px 23px;
+position:relative;
+text-align:center;
+background:var(--paper);
+box-shadow:0 8px 18px rgba(65,25,38,.15);
+transition:.4s ease;
+cursor:pointer
+}
+
+.apology-card:nth-child(1){transform:rotate(-1.5deg)}
+.apology-card:nth-child(2){transform:rotate(1deg) translateY(12px)}
+.apology-card:nth-child(3){transform:rotate(-.5deg)}
+.apology-card:nth-child(4){transform:rotate(1.4deg) translateY(10px)}
+.apology-card:nth-child(5){
+transform:rotate(-1deg);
+grid-column:2
+}
+
+.apology-card:hover{
+transform:translateY(-8px) rotate(0)!important;
+box-shadow:0 18px 30px rgba(65,25,38,.22)
+}
+
+.tape-card{
+position:absolute;
+width:65px;
+height:18px;
+top:-9px;
+left:50%;
+transform:translateX(-50%) rotate(-2deg);
+background:rgba(184,93,119,.3)
+}
+
+.card-number{
+position:absolute;
+top:12px;
+left:15px;
+font-size:7px;
+letter-spacing:2px;
+color:#b79883
+}
+
+.card-icon{
+margin:15px auto 10px;
+font-family:"Caveat",cursive;
+font-size:35px;
+color:var(--rose)
+}
+
+.apology-card h3{
+font-family:"Caveat",cursive;
+font-size:31px;
+font-weight:500;
+color:var(--burgundy)
+}
+
+.apology-card p{
+margin:7px auto 0;
+max-width:200px;
+font-size:9px;
+line-height:1.7;
+color:#76515b
+}
+
+.apology-card button{
+margin-top:20px;
+padding:8px 16px;
+border:1px solid rgba(116,47,67,.28);
+border-radius:30px;
+background:transparent;
+color:var(--burgundy);
+font-size:8px;
+cursor:pointer;
+transition:.3s
+}
+
+.apology-card button:hover{
+background:var(--burgundy);
+color:white
+}
+
+.read-stamp{
+position:absolute;
+right:10px;
+bottom:10px;
+padding:3px 7px;
+border:1px solid var(--rose);
+color:var(--rose);
+font-family:"Caveat",cursive;
+font-size:12px;
+transform:rotate(-10deg);
+opacity:0;
+transition:.4s
+}
+
+.apology-card.read .read-stamp{opacity:1}
+
+.apology-card.read{
+background:#fff7f8
+}
+
+.board-note{
+margin-top:45px;
+padding-top:20px;
+border-top:1px dashed rgba(116,47,67,.22);
+text-align:center
+}
+
+.board-note span{
+font-size:22px;
+color:var(--rose)
+}
+
+.board-note p{
+margin-top:3px;
+font-family:"Caveat",cursive;
+font-size:19px;
+color:var(--burgundy)
+}
+
+.final-section{
+max-width:800px;
+margin:80px auto 0;
+padding:0 25px;
+display:none;
+align-items:center;
+justify-content:center;
+gap:35px;
+animation:appear .8s ease
+}
+
+.final-section.show{display:flex}
+
+@keyframes appear{
+from{opacity:0;transform:translateY(25px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.envelope{
+width:150px;
+height:105px;
+background:#ead0d7;
+position:relative;
+box-shadow:0 10px 25px rgba(65,25,38,.18);
+transform:rotate(-3deg)
+}
+
+.envelope:before{
+content:"";
+position:absolute;
+inset:0;
+background:#f5e0e4;
+clip-path:polygon(0 0,50% 55%,100% 0)
+}
+
+.envelope-top{
+position:absolute;
+bottom:0;
+width:100%;
+height:60%;
+background:#e7c6cf;
+clip-path:polygon(0 100%,50% 25%,100% 100%)
+}
+
+.wax-seal{
+position:absolute;
+left:50%;
+top:52%;
+transform:translate(-50%,-50%);
+width:38px;
+height:38px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#7d3047;
+color:#f8dfe4;
+font-size:19px;
+box-shadow:0 3px 7px rgba(0,0,0,.2)
+}
+
+.final-intro{max-width:450px}
+
+.final-intro>span{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold)
+}
+
+.final-intro h2{
+margin:7px 0 10px;
+font-family:"Caveat",cursive;
+font-size:43px;
+line-height:.9;
+font-weight:500;
+color:var(--burgundy)
+}
+
+.final-intro h2 i{
+font-style:normal;
+color:var(--rose)
+}
+
+.final-intro p{
+font-size:11px;
+line-height:1.7;
+color:#69434d
+}
+
+.final-intro button{
+margin-top:18px;
+padding:11px 21px;
+border:0;
+border-radius:30px;
+background:var(--burgundy);
+color:white;
+font-size:9px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(116,47,67,.2);
+transition:.3s
+}
+
+.final-intro button:hover{
+transform:translateY(-3px);
+box-shadow:0 9px 20px rgba(116,47,67,.3)
+}
+
+.letter-section{
+display:none;
+max-width:850px;
+margin:70px auto 0;
+padding:0 25px;
+animation:appear .8s ease
+}
+
+.letter-section.show{display:block}
+
+.letter-paper{
+position:relative;
+padding:55px 70px 50px;
+background:
+repeating-linear-gradient(
+to bottom,
+transparent 0,
+transparent 31px,
+rgba(116,47,67,.08) 32px
+),
+var(--paper);
+box-shadow:0 20px 45px rgba(65,25,38,.2)
+}
+
+.letter-tape{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%) rotate(1deg);
+width:125px;
+height:27px;
+background:rgba(184,93,119,.27)
+}
+
+.letter-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:22px
+}
+
+.letter-top span{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold)
+}
+
+.letter-top small{
+font-family:"Caveat",cursive;
+font-size:17px;
+color:#a77a6b
+}
+
+.letter-paper h2{
+font-family:"Caveat",cursive;
+font-size:52px;
+font-weight:500;
+color:var(--burgundy);
+margin-bottom:30px
+}
+
+.letter-body p{
+margin-bottom:20px;
+font-family:"Caveat",cursive;
+font-size:19px;
+line-height:1.6;
+color:#54343d
+}
+
+.letter-ending{
+margin-top:35px;
+padding-top:25px;
+border-top:1px dashed rgba(116,47,67,.25);
+text-align:center
+}
+
+.letter-ending p{
+font-family:"Caveat",cursive;
+font-size:20px;
+color:#76515b
+}
+
+.letter-ending h3{
+margin-top:5px;
+font-family:"Caveat",cursive;
+font-size:31px;
+font-weight:500;
+color:var(--burgundy)
+}
+
+.signature{
+margin-top:8px;
+font-family:"Caveat",cursive;
+font-size:16px;
+color:#9c716a
+}
+
+.end-note{
+text-align:center;
+margin:30px auto 0
+}
+
+.end-note span{
+font-size:25px;
+color:var(--rose)
+}
+
+.end-note p{
+font-family:"Caveat",cursive;
+font-size:18px;
+color:var(--burgundy)
+}
+
+.apology-modal{
+position:fixed;
+inset:0;
+z-index:100;
+display:none;
+align-items:center;
+justify-content:center
+}
+
+.apology-modal.show{display:flex}
+
+.modal-bg{
+position:absolute;
+inset:0;
+background:rgba(55,19,30,.75);
+backdrop-filter:blur(7px)
+}
+
+.modal-card{
+width:min(530px,90%);
+position:relative;
+z-index:2;
+padding:45px 50px 40px;
+background:var(--paper);
+text-align:center;
+box-shadow:0 25px 70px rgba(0,0,0,.35);
+animation:modalOpen .4s ease
+}
+
+@keyframes modalOpen{
+from{opacity:0;transform:scale(.9) rotate(-1deg)}
+to{opacity:1;transform:scale(1) rotate(0)}
+}
+
+.close{
+position:absolute;
+right:15px;
+top:8px;
+border:0;
+background:transparent;
+font-size:28px;
+color:var(--burgundy);
+cursor:pointer
+}
+
+.modal-number{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold)
+}
+
+.modal-icon{
+margin:8px 0;
+font-family:"Caveat",cursive;
+font-size:36px;
+color:var(--rose)
+}
+
+.modal-card h2{
+font-family:"Caveat",cursive;
+font-size:42px;
+font-weight:500;
+color:var(--burgundy)
+}
+
+.modal-divider{
+margin:8px 0 18px;
+font-size:16px;
+color:var(--rose)
+}
+
+.modal-card p{
+font-size:12px;
+line-height:2;
+color:#65414b
+}
+
+.understand-button{
+margin-top:22px;
+padding:10px 22px;
+border:1px solid rgba(116,47,67,.3);
+border-radius:30px;
+background:transparent;
+color:var(--burgundy);
+font-size:9px;
+cursor:pointer;
+transition:.3s
+}
+
+.understand-button:hover{
+background:var(--burgundy);
+color:white
+}
+
+footer{
+height:31px;
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+z-index:15;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,250,245,.95);
+color:var(--burgundy);
+font-size:7px;
+letter-spacing:3px
+}
+
+@media(max-width:800px){
+.apology-header{padding:0 18px}
+.header-label{display:none}
+.header-title{font-size:24px}
+.apology-board{margin:0 18px;padding:30px 20px}
+.apology-cards{grid-template-columns:repeat(2,1fr)}
+.apology-card:nth-child(n){transform:none}
+.apology-card:nth-child(5){grid-column:1/-1;max-width:300px;width:100%;justify-self:center}
+.final-section{flex-direction:column;text-align:center}
+.letter-paper{padding:45px 35px}
+}
+
+@media(max-width:550px){
+.home span{display:none}
+.intro{padding-top:65px}
+.intro h1{font-size:53px}
+.apology-cards{grid-template-columns:1fr}
+.apology-card:nth-child(5){grid-column:auto}
+.apology-board{margin:0 10px}
+.board-heading{align-items:center}
+.board-heading h2{font-size:27px}
+.letter-paper{padding:40px 22px}
+.letter-paper h2{font-size:43px}
+.letter-body p{font-size:17px}
+.modal-card{padding:40px 25px 30px}
+}

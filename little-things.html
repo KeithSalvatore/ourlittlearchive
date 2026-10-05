@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Little Things ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/little-things.css">
+<link rel="apple-touch-icon" sizes="180x180" href="guides/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="guides/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="guides/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<div class="little-page">
+
+<header class="little-header">
+<a href="index.html" class="home">⌂ <span>Our Little Archive</span></a>
+<div class="page-title">The Little Things ♡</div>
+<div class="subtitle">THE THINGS I NOTICE</div>
+</header>
+
+<main class="little-main">
+
+<section class="intro">
+<span>♡ A COLLECTION OF LITTLE THINGS ♡</span>
+<h1>The Little <i>Things</i></h1>
+<p>Some things about you might seem small, but somehow they became some of my favorite things to notice.</p>
+</section>
+
+<section class="exhibits">
+
+<article class="thing-card" data-index="0">
+<div class="card-photo"><img src="Us/smile.jpg" alt="Your smile"></div>
+<div class="card-content">
+<small>EXHIBIT 01</small>
+<h2>Your Smile</h2>
+<p>My favorite kind of sunshine.</p>
+<button class="open-card">Discover this ♡</button>
+</div>
+</article>
+
+<article class="thing-card" data-index="1">
+<div class="card-photo"><img src="Us/words.jpg" alt="Your laugh"></div>
+<div class="card-content">
+<small>EXHIBIT 02</small>
+<h2>The Words I kept</h2>
+<p>Little messages that meant more than you probably realized.</p>
+<button class="open-card">Discover this ♡</button>
+</div>
+</article>
+
+<article class="thing-card" data-index="2">
+<div class="card-photo"><img src="Us/she.jpg" alt="The way you are"></div>
+<div class="card-content">
+<small>EXHIBIT 03</small>
+<h2>The Way You Are</h2>
+<p>Nothing ordinary about you.</p>
+<button class="open-card">Discover this ♡</button>
+</div>
+</article>
+
+<article class="thing-card" data-index="3">
+<div class="card-photo"><img src="Us/us.jpg" alt="Your strength"></div>
+<div class="card-content">
+<small>EXHIBIT 04</small>
+<h2>Us</h2>
+<p>One of the moments that I cherish the most.</p>
+<button class="open-card">Discover this ♡</button>
+</div>
+</article>
+
+</section>
+
+<section class="bottom-note">
+<span>♡ A LITTLE REMINDER ♡</span>
+<p>Not everything worth loving has to be grand. Sometimes it's the tiny things that make someone unforgettable.</p>
+</section>
+
+</main>
+
+<div class="exhibit-modal" id="exhibitModal">
+<div class="modal-bg"></div>
+
+<div class="exhibit-window">
+
+<button class="close" id="closeModal">×</button>
+
+<div class="exhibit-heading">
+<span id="exhibitNumber">EXHIBIT 01</span>
+<h2 id="exhibitTitle">Your Smile</h2>
+</div>
+
+<div class="gallery-area">
+
+<button class="gallery-arrow prev" id="prevPhoto">←</button>
+
+<div class="gallery-frame">
+<img id="galleryImage" src="" alt="">
+<div class="photo-caption" id="photoCaption"></div>
+</div>
+
+<button class="gallery-arrow next" id="nextPhoto">→</button>
+
+</div>
+
+<div class="gallery-dots" id="galleryDots"></div>
+
+<div class="reveal-area">
+<button class="reveal-button" id="revealButton">♡ There's something I want you to know</button>
+
+<div class="hidden-note" id="hiddenNote">
+<span>♡ A LITTLE NOTE ♡</span>
+<p id="noteText"></p>
+</div>
+</div>
+
+<div class="heart-area">
+<button class="heart-button" id="heartButton">♡</button>
+<span id="heartMessage">tap the heart</span>
+</div>
+
+<div class="modal-navigation">
+<button id="previousExhibit">← Previous</button>
+<span id="exhibitCounter">1 / 6</span>
+<button id="nextExhibit">Next →</button>
+</div>
+
+</div>
+</div>
+
+<footer>THE LITTLE THINGS ♡ MADE WITH LOVE</footer>
+
+</div>
+
+<script src="javascrip/little-things.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+:root{
+--pink:#f7c8d8;
+--light-pink:#fff0f5;
+--cream:#fffaf7;
+--burgundy:#7d2945;
+--dark:#40222c;
+--soft:#9a6475;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background-image:url("../guides/bgbody.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
+}
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:radial-gradient(circle at 15% 15%,rgba(255,255,255,.7),transparent 25%),radial-gradient(circle at 85% 85%,rgba(255,255,255,.6),transparent 25%);
+pointer-events:none;
+}
+.background-hearts{
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+z-index:0;
+}
+.home{
+position:relative;
+z-index:1;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:70px 20px 45px;
+}
+.hero{
+width:min(800px,100%);
+text-align:center;
+animation:fadeUp 1s ease forwards;
+}
+.eyebrow{
+font-family:"Caveat",cursive;
+font-size:24px;
+letter-spacing:1px;
+color:var(--burgundy);
+margin-bottom:10px;
+}
+.hero h1{
+font-family:"Caveat",cursive;
+font-size:78px;
+font-weight:600;
+line-height:1;
+color:var(--burgundy);
+margin-bottom:20px;
+}
+.intro{
+font-size:17px;
+line-height:1.8;
+color:var(--dark);
+max-width:600px;
+margin:auto;
+}
+.subtext{
+font-family:"Caveat",cursive;
+font-size:24px;
+color:var(--soft);
+margin-top:8px;
+}
+.enter-btn{
+display:inline-block;
+margin-top:30px;
+padding:13px 28px;
+border:1px solid var(--burgundy);
+border-radius:30px;
+background:var(--burgundy);
+color:white;
+font-family:"Caveat",cursive;
+font-size:23px;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(125,41,69,.2);
+transition:.3s ease;
+}
+.enter-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 13px 28px rgba(125,41,69,.25);
+background:#8d3451;
+}
+.archive-menu{
+width:min(850px,100%);
+margin:70px auto 0;
+}
+.menu-label{
+font-family:"Caveat",cursive;
+font-size:25px;
+color:var(--burgundy);
+text-align:center;
+margin-bottom:20px;
+}
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+.menu-card{
+display:flex;
+align-items:center;
+gap:15px;
+position:relative;
+padding:20px;
+background:rgba(255,250,247,.78);
+border:1px solid rgba(125,41,69,.12);
+border-radius:12px;
+color:var(--dark);
+text-decoration:none;
+box-shadow:0 8px 25px rgba(91,38,55,.08);
+transition:.3s ease;
+}
+.menu-card:hover{
+transform:translateY(-5px);
+background:rgba(255,250,247,.95);
+box-shadow:0 15px 30px rgba(91,38,55,.14);
+}
+.menu-icon{
+font-size:28px;
+min-width:40px;
+text-align:center;
+}
+.menu-card h2{
+font-family:"Caveat",cursive;
+font-size:27px;
+font-weight:600;
+color:var(--burgundy);
+}
+.menu-card p{
+font-size:12px;
+color:var(--soft);
+margin-top:2px;
+}
+.arrow{
+margin-left:auto;
+font-size:20px;
+color:var(--burgundy);
+transition:.3s;
+}
+.menu-card:hover .arrow{
+transform:translateX(5px);
+}
+.footer-note{
+margin-top:50px;
+font-family:"Caveat",cursive;
+font-size:21px;
+color:var(--soft);
+text-align:center;
+}
+.transition{
+position:fixed;
+inset:0;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background:var(--light-pink);
+z-index:100;
+opacity:0;
+visibility:hidden;
+transition:.5s ease;
+}
+.transition.active{
+opacity:1;
+visibility:visible;
+}
+.transition p{
+font-family:"Caveat",cursive;
+font-size:28px;
+color:var(--burgundy);
+}
+.transition span{
+font-size:35px;
+color:var(--burgundy);
+margin-top:10px;
+animation:pulse 1s infinite;
+}
+.floating-heart{
+position:fixed;
+bottom:-30px;
+font-size:18px;
+color:rgba(125,41,69,.2);
+pointer-events:none;
+z-index:0;
+animation:floatUp linear forwards;
+}
+@keyframes floatUp{
+0%{
+transform:translateY(0) rotate(0);
+opacity:0;
+}
+15%{
+opacity:1;
+}
+100%{
+transform:translateY(-110vh) rotate(25deg);
+opacity:0;
+}
+}
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+opacity:.7;
+}
+50%{
+transform:scale(1.2);
+opacity:1;
+}
+}
+@media(max-width:650px){
+.home{
+padding:50px 15px 35px;
+}
+.hero h1{
+font-size:58px;
+}
+.intro{
+font-size:15px;
+}
+.menu-grid{
+grid-template-columns:1fr;
+}
+.archive-menu{
+margin-top:55px;
+}
+.menu-card{
+padding:17px;
+}
+}
+@media(max-width:400px){
+.hero h1{
+font-size:50px;
+}
+.eyebrow{
+font-size:21px;
+}
+.enter-btn{
+font-size:21px;
+padding:11px 23px;
+}
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Little Garden ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/garden.css">
+<link rel="apple-touch-icon" sizes="180x180" href="guides/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="guides/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="guides/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<main class="garden-page">
+<a href="index.html" class="back-btn">← Back Home</a>
+
+<section class="garden-intro">
+<span>♡ A LITTLE PLACE FOR US ♡</span>
+<h1>Our Little Garden</h1>
+<p>Eight little flowers for eight months of memories.</p>
+<p>Click each one and see what it holds. 🌷</p>
+</section>
+
+<section class="garden">
+<div class="grass"></div>
+<div class="flower flower-1" data-index="0">
+<div class="stem"></div>
+<div class="petals"><span>🌷</span></div>
+</div>
+<div class="flower flower-2" data-index="1">
+<div class="stem"></div>
+<div class="petals"><span>🌸</span></div>
+</div>
+<div class="flower flower-3" data-index="2">
+<div class="stem"></div>
+<div class="petals"><span>🌹</span></div>
+</div>
+<div class="flower flower-4" data-index="3">
+<div class="stem"></div>
+<div class="petals"><span>🌷</span></div>
+</div>
+<div class="flower flower-5" data-index="4">
+<div class="stem"></div>
+<div class="petals"><span>🌸</span></div>
+</div>
+<div class="flower flower-6" data-index="5">
+<div class="stem"></div>
+<div class="petals"><span>🌹</span></div>
+</div>
+<div class="flower flower-7" data-index="6">
+<div class="stem"></div>
+<div class="petals"><span>🌷</span></div>
+</div>
+<div class="flower flower-8" data-index="7">
+<div class="stem"></div>
+<div class="petals"><span>🌸</span></div>
+</div>
+</section>
+
+<section class="flower-count">
+<span id="count">0</span> / 8 flowers opened ♡
+</section>
+
+<section class="garden-note" id="gardenNote">
+<div class="note-content">
+<span class="note-small">A LITTLE NOTE</span>
+<h2>There's something here for you.</h2>
+<p>Maybe the flowers aren't the only things that grew during those eight months.</p>
+<p>Take your time and open them all. ♡</p>
+</div>
+</section>
+
+<section class="final-garden" id="finalGarden">
+<div class="final-flower">🌷</div>
+<span>YOU FOUND THEM ALL</span>
+<h2>Eight Months, Eight Little Flowers</h2>
+<div class="divider">✦</div>
+<p>Every flower carries a little piece of a chapter we shared.</p>
+<p>And if there's one thing I've learned, it's that beautiful things don't always have to be perfect to be meaningful.</p>
+<p>Sometimes they just need someone willing to take care of them.</p>
+<p class="final-line">Maybe that's what this little garden is for. ♡</p>
+<a href="minigame.html" class="next-btn">There's One More Secret →</a>
+</section>
+
+<div class="flower-modal" id="flowerModal">
+<div class="modal-card">
+<button id="closeModal">×</button>
+<span class="modal-flower" id="modalFlower">🌷</span>
+<span class="modal-month" id="modalMonth"></span>
+<h2 id="modalTitle"></h2>
+<p id="modalMessage"></p>
+</div>
+</div>
+
+</main>
+<script src="javascrip/garden.js"></script>
+</body>
+</html>

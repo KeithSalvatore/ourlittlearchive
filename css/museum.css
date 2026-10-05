@@ -1,0 +1,817 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #f7dfe4;
+    --light-pink: #f8e7e9;
+    --cream: #fff7f1;
+    --burgundy: #742f43;
+    --dark: #3b2028;
+    --gold: #b28a62;
+    --soft-gold: #d6b27e;
+    --white: #fff;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    color: var(--dark);
+    overflow: hidden;
+    background: var(--pink);
+}
+
+.museum {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--pink);
+}
+
+.museum-header {
+    height: 65px;
+    padding: 0 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 20;
+    background: rgba(255, 247, 241, 0.96);
+    border-bottom: 1px solid rgba(116, 47, 67, 0.12);
+}
+
+.home {
+    color: var(--burgundy);
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    transition: 0.3s ease;
+}
+
+.home:first-letter {
+    font-size: 24px;
+}
+
+.home:hover {
+    transform: translateX(3px);
+    opacity: 0.75;
+}
+
+.museum-name {
+    color: var(--burgundy);
+    font-family: "Caveat", cursive;
+    font-size: 29px;
+    font-weight: 500;
+}
+
+.room {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.room b {
+    color: var(--burgundy);
+}
+
+.museum-space {
+    width: 100%;
+    height: calc(100vh - 65px);
+    position: relative;
+    overflow: hidden;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(67, 24, 36, 0.22),
+            rgba(67, 24, 36, 0.04) 45%,
+            rgba(67, 24, 36, 0.12)
+        ),
+        url("../guides/museum.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.museum-space::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 235, 238, 0.08),
+        transparent 55%,
+        rgba(50, 20, 28, 0.15)
+    );
+    pointer-events: none;
+}
+
+.room-page {
+    position: absolute;
+    inset: 0;
+    padding: 55px 7%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease,
+        visibility 0.65s ease;
+}
+
+.room-page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.room-info {
+    position: absolute;
+    top: 65px;
+    left: 7%;
+    width: 310px;
+    z-index: 5;
+    color: var(--white);
+    text-shadow: 0 3px 10px rgba(55, 20, 30, 0.5);
+}
+
+.room-info > span {
+    display: block;
+    margin-bottom: 15px;
+    color: #ffeef1;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.room-info h1 {
+    font-family: "Caveat", cursive;
+    font-size: 61px;
+    font-weight: 500;
+    line-height: 0.92;
+    margin-bottom: 22px;
+}
+
+.room-info h1 i {
+    color: #ffe1e7;
+    font-style: normal;
+}
+
+.room-info h1::after {
+    content: "♡";
+    display: block;
+    width: 145px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    text-shadow: none;
+}
+
+.room-info p {
+    max-width: 285px;
+    color: #fff7f5;
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.art-gallery {
+    position: absolute;
+    top: 85px;
+    right: 6%;
+    width: 62%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    z-index: 5;
+}
+
+.art {
+    width: 31%;
+    min-width: 175px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.art:hover {
+    transform: translateY(-9px);
+}
+
+.picture {
+    height: 300px;
+    padding: 10px;
+    position: relative;
+    background: #825434;
+    border: 3px solid var(--soft-gold);
+    box-shadow:
+        0 15px 30px rgba(35, 12, 19, 0.35),
+        inset 0 0 0 3px #613c2a;
+    transition:
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+.picture::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    z-index: 2;
+    border: 1px solid #f1d49f;
+    pointer-events: none;
+}
+
+.picture::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -17px;
+    width: 42px;
+    height: 7px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        90deg,
+        #8d623e,
+        #d9b078,
+        #8d623e
+    );
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.art:hover .picture {
+    box-shadow:
+        0 22px 40px rgba(35, 12, 19, 0.45),
+        0 0 25px rgba(255, 225, 190, 0.28),
+        inset 0 0 0 3px #613c2a;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.picture button {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(116, 47, 67, 0.2);
+    border-radius: 50%;
+    background: rgba(255, 247, 241, 0.96);
+    color: var(--burgundy);
+    font-size: 23px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.35s ease;
+    z-index: 4;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+.art:hover .picture button {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.picture button:hover {
+    background: var(--burgundy);
+    color: var(--white);
+    transform: scale(1.08);
+}
+
+.label {
+    position: relative;
+    margin-top: 12px;
+    padding: 13px 12px 14px;
+    text-align: center;
+    color: var(--dark);
+    background: rgba(255, 247, 241, 0.97);
+    border: 1px solid #d0a47e;
+    box-shadow: 0 9px 18px rgba(45, 18, 25, 0.22);
+}
+
+.label::before,
+.label::after {
+    content: "♡";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--burgundy);
+    font-size: 9px;
+}
+
+.label::before {
+    left: 10px;
+}
+
+.label::after {
+    right: 10px;
+}
+
+.label small {
+    color: var(--gold);
+    font-size: 7px;
+    letter-spacing: 3px;
+}
+
+.label h2 {
+    margin: 4px 0;
+    color: var(--burgundy);
+    font-family: "Caveat", cursive;
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.label p {
+    color: #66434b;
+    font-size: 9px;
+    font-style: italic;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    z-index: 15;
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background: rgba(116, 47, 67, 0.72);
+    color: var(--white);
+    font-size: 25px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(40, 15, 22, 0.2);
+}
+
+.nav:hover {
+    background: var(--burgundy);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.prev {
+    left: 25px;
+}
+
+.next {
+    right: 25px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.35);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(42, 13, 22, 0.76);
+    backdrop-filter: blur(6px);
+}
+
+.modal-box {
+    position: relative;
+    z-index: 2;
+    width: min(850px, 90%);
+    display: grid;
+    grid-template-columns: 45% 55%;
+    background: var(--cream);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    animation: modalOpen 0.45s ease;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-img {
+    padding: 15px;
+    background: #754354;
+}
+
+.modal-img img {
+    width: 100%;
+    height: 420px;
+    display: block;
+    object-fit: cover;
+    border: 7px solid #c99a70;
+}
+
+.modal-text {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-text > span {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.modal-text h2 {
+    margin: 9px 0 18px;
+    color: var(--burgundy);
+    font-family: "Caveat", cursive;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.modal-text p {
+    color: #57343d;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.modal-text hr {
+    width: 65px;
+    margin: 25px 0 10px;
+    border: 0;
+    border-top: 1px solid var(--gold);
+}
+
+.modal-text strong {
+    color: var(--burgundy);
+    font-family: "Caveat", cursive;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    z-index: 5;
+    border: 0;
+    background: transparent;
+    color: var(--burgundy);
+    font-size: 29px;
+    cursor: pointer;
+}
+
+.final {
+    width: 90%;
+    height: 72%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    position: relative;
+    z-index: 5;
+}
+
+.final-picture {
+    width: 310px;
+    height: 380px;
+    padding: 12px;
+    background: #825434;
+    border: 4px solid var(--soft-gold);
+    box-shadow: 0 20px 40px rgba(35, 12, 19, 0.4);
+}
+
+.final-picture img,
+.final-picture video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.final-note {
+    width: 430px;
+    padding: 35px;
+    background: rgba(255, 247, 241, 0.97);
+    border: 1px solid #d0a47e;
+    box-shadow: 0 18px 35px rgba(35, 12, 19, 0.25);
+}
+
+.final-note > span {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.final-note h1 {
+    margin: 9px 0 20px;
+    color: var(--burgundy);
+    font-family: "Caveat", cursive;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 0.92;
+}
+
+.final-note h1 i {
+    font-style: normal;
+}
+
+.final-note p {
+    margin-bottom: 11px;
+    color: #57343d;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.final-note h2 {
+    color: var(--burgundy);
+    font-family: "Caveat", cursive;
+    font-size: 31px;
+    font-weight: 500;
+}
+
+.ending {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 55px;
+    z-index: 5;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.ending p {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.ending h2 {
+    margin: 4px 0 10px;
+    font-family: "Caveat", cursive;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.ending a {
+    display: inline-block;
+    padding: 9px 20px;
+    border-radius: 30px;
+    background: var(--cream);
+    color: var(--burgundy);
+    text-decoration: none;
+    font-size: 10px;
+    transition: 0.3s ease;
+}
+
+.ending a:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 32px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 247, 241, 0.96);
+    color: var(--burgundy);
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 1000px) {
+    .room-info {
+        left: 5%;
+        width: 270px;
+    }
+
+    .room-info h1 {
+        font-size: 50px;
+    }
+
+    .art-gallery {
+        right: 4%;
+        width: 65%;
+        gap: 15px;
+    }
+
+    .art {
+        min-width: 145px;
+    }
+
+    .picture {
+        height: 250px;
+    }
+}
+
+@media (max-width: 750px) {
+    .museum-header {
+        height: 58px;
+        padding: 0 18px;
+    }
+
+    .museum-name {
+        font-size: 23px;
+    }
+
+    .home span,
+    .room {
+        display: none;
+    }
+
+    .museum-space {
+        height: calc(100vh - 58px);
+    }
+
+    .room-page {
+        padding: 30px 45px;
+    }
+
+    .room-info {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .room-info h1 {
+        font-size: 44px;
+    }
+
+    .room-info p {
+        margin: auto;
+        font-size: 12px;
+    }
+
+    .art-gallery {
+        top: 235px;
+        right: 45px;
+        left: 45px;
+        width: auto;
+        gap: 12px;
+    }
+
+    .art {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .picture {
+        height: 190px;
+    }
+
+    .label h2 {
+        font-size: 21px;
+    }
+
+    .label p {
+        font-size: 8px;
+    }
+
+    .nav {
+        width: 43px;
+        height: 43px;
+        font-size: 19px;
+    }
+
+    .prev {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
+
+    .dots {
+        bottom: 42px;
+    }
+
+    .modal-box {
+        width: 92%;
+        max-height: 90vh;
+        overflow-y: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .modal-img img {
+        height: 250px;
+    }
+
+    .modal-text {
+        padding: 28px;
+    }
+
+    .final {
+        width: 90%;
+        height: auto;
+        padding-top: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .final-picture {
+        width: 210px;
+        height: 260px;
+    }
+
+    .final-note {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .final-note h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 500px) {
+    .room-page {
+        padding: 25px 38px;
+    }
+
+    .room-info h1 {
+        font-size: 39px;
+    }
+
+    .art-gallery {
+        top: 220px;
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+    }
+
+    .art:nth-child(3) {
+        display: none;
+    }
+
+    .picture {
+        height: 165px;
+    }
+
+    .label {
+        padding: 9px 5px;
+    }
+
+    .label h2 {
+        font-size: 19px;
+    }
+
+    .label p {
+        font-size: 7px;
+    }
+
+    .picture button {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    footer {
+        display: none;
+    }
+}

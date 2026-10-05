@@ -1,0 +1,436 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--pink:#f5d8df;
+--light-pink:#f9e9eb;
+--cream:#fff7f1;
+--paper:#fffaf5;
+--burgundy:#742f43;
+--dark:#3b2028;
+--gold:#b28a62;
+--shadow:rgba(55,20,30,.18)
+}
+body{
+background-image:url("../guides/littlethingsbg.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat
+}
+.little-page{min-height:100vh;position:relative;padding-bottom:55px}
+.little-header{
+height:64px;
+padding:0 35px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(255,247,241,.96);
+border-bottom:1px solid rgba(116,47,67,.12);
+position:relative;
+z-index:10
+}
+.home{
+display:flex;
+align-items:center;
+gap:8px;
+color:var(--burgundy);
+text-decoration:none;
+font-size:14px;
+transition:.3s ease
+}
+.home:first-letter{font-size:23px}
+.home:hover{transform:translateX(3px);opacity:.75}
+.page-title{
+font-family:"Caveat",cursive;
+font-size:28px;
+color:var(--burgundy)
+}
+.subtitle{
+font-size:8px;
+letter-spacing:3px;
+color:var(--gold)
+}
+.little-main{
+max-width:1150px;
+margin:auto;
+padding:65px 35px 80px
+}
+.intro{text-align:center;max-width:600px;margin:0 auto 55px}
+.intro>span{
+font-size:9px;
+letter-spacing:3px;
+color:var(--gold)
+}
+.intro h1{
+margin:10px 0 13px;
+font-family:"Caveat",cursive;
+font-size:64px;
+font-weight:500;
+line-height:.9;
+color:var(--burgundy)
+}
+.intro h1 i{
+font-style:normal;
+color:#a44f68
+}
+.intro p{
+font-size:12px;
+line-height:1.8;
+color:#68434d
+}
+.exhibits{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px
+}
+.thing-card{
+background:var(--paper);
+box-shadow:0 12px 30px var(--shadow);
+transition:transform .4s ease,box-shadow .4s ease;
+position:relative;
+overflow:hidden
+}
+.thing-card:nth-child(2){transform:translateY(20px) rotate(1deg)}
+.thing-card:nth-child(4){transform:translateY(20px) rotate(-1deg)}
+.thing-card:nth-child(5){transform:translateY(-10px) rotate(1deg)}
+.thing-card:hover{
+transform:translateY(-8px) rotate(0)!important;
+box-shadow:0 20px 38px rgba(55,20,30,.25)
+}
+.card-photo{
+height:230px;
+overflow:hidden;
+background:#ead1d7
+}
+.card-photo img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+transition:transform .7s ease
+}
+.thing-card:hover .card-photo img{transform:scale(1.06)}
+.card-content{padding:24px 24px 27px;text-align:center}
+.card-content small{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold)
+}
+.card-content h2{
+margin:8px 0 6px;
+font-family:"Caveat",cursive;
+font-size:32px;
+font-weight:500;
+color:var(--burgundy)
+}
+.card-content p{
+font-size:10px;
+line-height:1.6;
+color:#68434d;
+min-height:32px
+}
+.open-card{
+margin-top:17px;
+padding:9px 18px;
+border:1px solid rgba(116,47,67,.35);
+border-radius:30px;
+background:transparent;
+color:var(--burgundy);
+font-family:"Playfair Display",serif;
+font-size:8px;
+cursor:pointer;
+transition:.3s ease
+}
+.open-card:hover{
+background:var(--burgundy);
+color:white;
+transform:translateY(-2px)
+}
+.bottom-note{
+max-width:600px;
+margin:70px auto 0;
+padding:25px;
+text-align:center;
+border-top:1px solid rgba(116,47,67,.18);
+border-bottom:1px solid rgba(116,47,67,.18)
+}
+.bottom-note span{
+font-size:8px;
+letter-spacing:3px;
+color:var(--gold)
+}
+.bottom-note p{
+margin-top:10px;
+font-family:"Caveat",cursive;
+font-size:22px;
+line-height:1.3;
+color:var(--burgundy)
+}
+.exhibit-modal{
+position:fixed;
+inset:0;
+z-index:100;
+display:none;
+align-items:center;
+justify-content:center
+}
+.exhibit-modal.show{display:flex}
+.modal-bg{
+position:absolute;
+inset:0;
+background:rgba(47,15,25,.78);
+backdrop-filter:blur(7px)
+}
+.exhibit-window{
+width:min(900px,92%);
+max-height:92vh;
+overflow:auto;
+position:relative;
+z-index:2;
+padding:38px 48px 30px;
+background:var(--paper);
+box-shadow:0 30px 80px rgba(0,0,0,.4);
+animation:windowOpen .45s ease
+}
+@keyframes windowOpen{
+from{opacity:0;transform:translateY(25px) scale(.94)}
+to{opacity:1;transform:translateY(0) scale(1)}
+}
+.close{
+position:absolute;
+top:10px;
+right:18px;
+border:0;
+background:transparent;
+color:var(--burgundy);
+font-size:29px;
+cursor:pointer
+}
+.exhibit-heading{text-align:center;margin-bottom:22px}
+.exhibit-heading span{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold)
+}
+.exhibit-heading h2{
+margin-top:5px;
+font-family:"Caveat",cursive;
+font-size:46px;
+font-weight:500;
+color:var(--burgundy)
+}
+.gallery-area{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:18px
+}
+.gallery-frame{
+width:min(570px,75%);
+height:390px;
+position:relative;
+padding:10px;
+background:white;
+box-shadow:0 8px 25px rgba(50,20,30,.15)
+}
+.gallery-frame img{
+width:100%;
+height:100%;
+display:block;
+object-fit:contain;
+background:#111
+}
+.photo-caption{
+position:absolute;
+bottom:10px;
+left:10px;
+right:10px;
+padding:10px;
+background:rgba(55,20,30,.72);
+color:white;
+font-family:"Caveat",cursive;
+font-size:18px;
+text-align:center
+}
+.gallery-arrow{
+width:44px;
+height:44px;
+flex-shrink:0;
+border:1px solid rgba(116,47,67,.3);
+border-radius:50%;
+background:var(--cream);
+color:var(--burgundy);
+font-size:18px;
+cursor:pointer;
+transition:.3s ease
+}
+.gallery-arrow:hover{
+background:var(--burgundy);
+color:white
+}
+.gallery-dots{
+display:flex;
+justify-content:center;
+gap:8px;
+margin:16px 0 20px
+}
+.gallery-dot{
+width:7px;
+height:7px;
+padding:0;
+border:0;
+border-radius:50%;
+background:#d8b7c0;
+cursor:pointer
+}
+.gallery-dot.active{background:var(--burgundy);transform:scale(1.35)}
+.reveal-area{
+max-width:650px;
+margin:auto;
+text-align:center
+}
+.reveal-button{
+padding:11px 20px;
+border:1px solid rgba(116,47,67,.35);
+border-radius:30px;
+background:transparent;
+color:var(--burgundy);
+font-family:"Playfair Display",serif;
+font-size:9px;
+cursor:pointer;
+transition:.3s ease
+}
+.reveal-button:hover{
+background:var(--burgundy);
+color:white
+}
+.hidden-note{
+display:none;
+margin-top:18px;
+padding:22px 28px;
+background:#f8e5e8;
+border:1px dashed rgba(116,47,67,.3);
+animation:noteReveal .5s ease
+}
+.hidden-note.show{display:block}
+@keyframes noteReveal{
+from{opacity:0;transform:translateY(8px)}
+to{opacity:1;transform:translateY(0)}
+}
+.hidden-note span{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold)
+}
+.hidden-note p{
+margin-top:10px;
+font-size:12px;
+line-height:1.9;
+color:#593640
+}
+.heart-area{
+margin:22px 0;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px
+}
+.heart-button{
+width:45px;
+height:45px;
+border:1px solid #d6aab5;
+border-radius:50%;
+background:var(--light-pink);
+color:var(--burgundy);
+font-size:21px;
+cursor:pointer;
+transition:.25s ease
+}
+.heart-button:hover{transform:scale(1.08)}
+.heart-button.loved{
+background:var(--burgundy);
+color:white;
+transform:scale(1.15)
+}
+#heartMessage{
+font-family:"Caveat",cursive;
+font-size:17px;
+color:var(--burgundy)
+}
+.modal-navigation{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:30px;
+margin-top:8px
+}
+.modal-navigation button{
+border:0;
+background:transparent;
+color:var(--burgundy);
+font-family:"Playfair Display",serif;
+font-size:9px;
+cursor:pointer
+}
+.modal-navigation button:hover{text-decoration:underline}
+#exhibitCounter{
+font-size:8px;
+letter-spacing:2px;
+color:var(--gold)
+}
+footer{
+height:31px;
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+z-index:10;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,247,241,.96);
+color:var(--burgundy);
+font-size:7px;
+letter-spacing:3px
+}
+@media(max-width:850px){
+.little-header{padding:0 18px}
+.page-title{font-size:24px}
+.subtitle{display:none}
+.little-main{padding:45px 22px 70px}
+.intro h1{font-size:55px}
+.exhibits{grid-template-columns:repeat(2,1fr);gap:25px}
+.thing-card:nth-child(n){transform:none}
+.thing-card:hover{transform:translateY(-6px)!important}
+.gallery-frame{height:330px}
+}
+@media(max-width:600px){
+.home span{display:none}
+.little-header{height:58px}
+.little-main{padding:35px 16px 65px}
+.intro{margin-bottom:35px}
+.intro h1{font-size:49px}
+.intro p{font-size:11px}
+.exhibits{grid-template-columns:1fr;gap:25px}
+.card-photo{height:260px}
+.card-content{padding:20px}
+.bottom-note{margin-top:45px}
+.exhibit-window{
+width:94%;
+padding:35px 18px 24px
+}
+.exhibit-heading h2{font-size:39px}
+.gallery-area{gap:7px}
+.gallery-frame{
+width:78%;
+height:310px;
+padding:7px
+}
+.gallery-arrow{
+width:40px;
+height:40px;
+font-size:16px
+}
+.hidden-note{padding:18px 15px}
+.hidden-note p{font-size:11px}
+.modal-navigation{gap:18px}
+}

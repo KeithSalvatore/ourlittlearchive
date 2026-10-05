@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Museum of You ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/museum.css">
+</head>
+<body>
+
+<div class="museum">
+<header class="museum-header">
+<a href="index.html" class="home">⌂ <span>Our Little Archive</span></a>
+<div class="museum-name">The Museum of You ♡</div>
+<div class="room">ROOM <b id="roomNumber">01</b></div>
+</header>
+
+<main class="museum-space">
+<section class="room-page active" id="room1">
+<div class="room-info">
+<span>♡ EXHIBITION 01 ♡</span>
+<h1>Reasons Why<br><i>I Love You</i></h1>
+<p>A little museum dedicated to the person who somehow became one of the most beautiful parts of my life.</p>
+</div>
+
+<div class="art-gallery">
+<article class="art" data-title="Your Smile" data-text="Your smile is honestly one of my favorite things in the world. It can make ordinary moments feel special, and somehow, seeing you happy makes me happy too. ♡">
+<div class="picture"><img src="Us/her1.jpg" alt="Your smile"><button>→</button></div>
+<div class="label"><small>EXHIBIT 01</small><h2>Your Smile</h2><p>My favorite kind of sunshine.</p></div>
+</article>
+
+<article class="art" data-title="The Way You Are" data-text="I love the little things that make you, you. Your expressions, your habits, the way you talk, and even those random moments when you're simply being yourself.">
+<div class="picture"><img src="Us/her2.jpg" alt="The way you are"><button>→</button></div>
+<div class="label"><small>EXHIBIT 02</small><h2>The Way You Are</h2><p>Nothing ordinary about you.</p></div>
+</article>
+
+<article class="art" data-title="Your Heart" data-text="You have a heart that cares deeply, even when you don't always show it. I adore the softness behind your strength and the way you care about the people you love.">
+<div class="picture"><img src="Us/her3.jpg" alt="Your heart"><button>→</button></div>
+<div class="label"><small>EXHIBIT 03</small><h2>Your Heart</h2><p>Something worth protecting.</p></div>
+</article>
+</div>
+
+<div class="people">
+<i></i><i></i><i></i>
+</div>
+</section>
+
+<section class="room-page" id="room2">
+<div class="room-info">
+<span>♡ EXHIBITION 02 ♡</span>
+<h1>The Little<br><i>Things</i></h1>
+<p>Some of my favorite things about you aren't necessarily the things everyone notices.</p>
+</div>
+
+<div class="art-gallery">
+<article class="art" data-title="Your Laugh" data-text="Your laugh is one of those sounds I could probably recognize anywhere. I love how it changes the mood and makes everything feel lighter.">
+<div class="picture"><img src="Us/her4.jpg" alt="Your laugh"><button>→</button></div>
+<div class="label"><small>EXHIBIT 04</small><h2>Your Laugh</h2><p>A sound I never get tired of.</p></div>
+</article>
+
+<article class="art" data-title="Your Strength" data-text="I admire how you keep going even when things aren't easy. You may have moments when you doubt yourself, but I see the strength in you even then.">
+<div class="picture"><img src="Us/her5.jpg" alt="Your strength"><button>→</button></div>
+<div class="label"><small>EXHIBIT 05</small><h2>Your Strength</h2><p>Stronger than you realize.</p></div>
+</article>
+
+<article class="art" data-title="Everything In Between" data-text="The random conversations, little jokes, quiet moments, silly things, and everything we never planned somehow became some of my favorite memories.">
+<div class="picture"><img src="Us/her7.jpg" alt="Everything in between"><button>→</button></div>
+<div class="label"><small>EXHIBIT 06</small><h2>Everything In Between</h2><p>The little things became everything.</p></div>
+</article>
+</div>
+</section>
+
+<section class="room-page" id="room3">
+<div class="final">
+<div class="final-picture">
+<video id="favoriteVideo" controls muted playsinline preload="auto">
+<source src="Us/uno.mp4" type="video/mp4">
+Your browser does not support the video element.
+</video>
+</div>
+<div class="final-note">
+<span>♡ FINAL EXHIBITION ♡</span>
+<h1>Why It Will<br><i>Always Be You</i></h1>
+<p>If someone asked me to choose one favorite thing about you, I honestly wouldn't know where to start.</p>
+<p>It isn't just your smile. It's not just your eyes, your laugh, your personality, or the way you make me feel.</p>
+<p>It's the whole collection. Every little part of you that I've gotten to know, the good days, the difficult ones, the silly moments, and everything in between.</p>
+<p>And somehow, after all of it...</p>
+<h2>it's still you. ♡</h2>
+</div>
+</div>
+
+<div class="ending">
+<p>This museum may have an ending...</p>
+<h2>but my reasons don't. ♡</h2>
+<a href="index.html">Return to Our Archive</a>
+</div>
+</section>
+
+<button class="nav prev" id="prev">←</button>
+<button class="nav next" id="next">→</button>
+<div class="dots">
+<button class="dot active" data-room="0"></button>
+<button class="dot" data-room="1"></button>
+<button class="dot" data-room="2"></button>
+</div>
+</main>
+
+<div class="modal" id="modal">
+<div class="modal-bg"></div>
+<div class="modal-box">
+<button class="close" id="close">×</button>
+<div class="modal-img"><img id="modalImage" src="" alt=""></div>
+<div class="modal-text">
+<span>♡ A LITTLE NOTE ♡</span>
+<h2 id="modalTitle"></h2>
+<p id="modalMessage"></p>
+<hr>
+<strong>— from my heart</strong>
+</div>
+</div>
+</div>
+
+<footer>THE MUSEUM OF YOU ♡ A COLLECTION MADE WITH LOVE</footer>
+</div>
+
+<script src="javascrip/museum.js"></script>
+</body>
+</html>

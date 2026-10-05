@@ -1,0 +1,393 @@
+:root{
+--pink:#f7c8d8;
+--light:#fff0f5;
+--cream:#fffaf7;
+--burgundy:#7d2945;
+--dark:#40222c;
+--soft:#9a6475;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+background-image:url("../guides/minigame.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat
+}
+.game-page{
+width:min(900px,100%);
+margin:auto;
+padding:30px 20px 70px;
+}
+.back-btn{
+display:inline-block;
+margin-bottom:25px;
+color:var(--burgundy);
+text-decoration:none;
+font-family:"Caveat",cursive;
+font-size:22px;
+transition:.3s;
+}
+.back-btn:hover{
+transform:translateX(-5px);
+}
+.game-card,.phrase-screen,.success-screen{
+background:rgba(255,250,247,.95);
+border-radius:14px;
+box-shadow:0 20px 60px rgba(91,38,55,.15);
+text-align:center;
+}
+.game-card{
+padding:45px 45px 40px;
+}
+.game-label,.success-label{
+font-family:"Caveat",cursive;
+font-size:22px;
+color:var(--soft);
+letter-spacing:1px;
+}
+.game-top h1{
+font-family:"Caveat",cursive;
+font-size:58px;
+color:var(--burgundy);
+margin:5px 0 10px;
+}
+.game-top p{
+font-size:15px;
+line-height:1.8;
+color:var(--soft);
+}
+.progress{
+width:100%;
+max-width:500px;
+margin:30px auto 10px;
+}
+#roundText{
+font-family:"Caveat",cursive;
+font-size:19px;
+color:var(--burgundy);
+}
+.progress-bar{
+height:7px;
+background:#f0dce3;
+border-radius:20px;
+overflow:hidden;
+margin-top:7px;
+}
+.progress-bar span{
+display:block;
+height:100%;
+width:25%;
+background:var(--burgundy);
+border-radius:20px;
+transition:.4s;
+}
+.hearts{
+font-size:20px;
+letter-spacing:7px;
+color:var(--burgundy);
+margin:12px 0 22px;
+}
+.pictures{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+max-width:600px;
+margin:0 auto 25px;
+}
+.picture{
+height:150px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background:var(--light);
+border:1px solid rgba(125,41,69,.12);
+border-radius:12px;
+box-shadow:0 7px 18px rgba(91,38,55,.07);
+}
+.picture-icon{
+font-size:55px;
+line-height:1;
+}
+.picture-text{
+font-family:"Caveat",cursive;
+font-size:18px;
+color:var(--burgundy);
+margin-top:9px;
+}
+.answer{
+display:flex;
+justify-content:center;
+gap:7px;
+min-height:55px;
+margin:20px auto;
+}
+.answer-slot{
+width:42px;
+height:48px;
+border-bottom:2px solid var(--burgundy);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:"Caveat",cursive;
+font-size:30px;
+color:var(--burgundy);
+}
+.letters{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:8px;
+max-width:650px;
+margin:auto;
+}
+.letter-btn{
+width:45px;
+height:45px;
+border:1px solid rgba(125,41,69,.25);
+border-radius:8px;
+background:white;
+color:var(--burgundy);
+font-family:"Caveat",cursive;
+font-size:24px;
+font-weight:600;
+cursor:pointer;
+transition:.2s;
+}
+.letter-btn:hover{
+transform:translateY(-3px);
+background:var(--light);
+}
+.letter-btn.used{
+opacity:.2;
+pointer-events:none;
+}
+.hint-btn{
+margin-top:25px;
+padding:9px 20px;
+border:1px solid var(--burgundy);
+border-radius:25px;
+background:transparent;
+color:var(--burgundy);
+font-family:"Caveat",cursive;
+font-size:19px;
+cursor:pointer;
+transition:.3s;
+}
+.hint-btn:hover{
+background:var(--burgundy);
+color:white;
+}
+.message{
+min-height:27px;
+margin-top:15px;
+font-family:"Caveat",cursive;
+font-size:21px;
+color:var(--burgundy);
+}
+.phrase-screen{
+display:none;
+padding:55px 35px;
+}
+.phrase-screen.active{
+display:block;
+animation:appear .8s ease;
+}
+.phrase-screen h1{
+font-family:"Caveat",cursive;
+font-size:55px;
+color:var(--burgundy);
+margin:7px 0;
+}
+.phrase-intro{
+color:var(--soft);
+font-size:15px;
+margin-bottom:20px;
+}
+.found-words{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin:25px 0;
+}
+.found-word{
+padding:8px 18px;
+background:var(--light);
+border-radius:20px;
+font-family:"Caveat",cursive;
+font-size:21px;
+color:var(--burgundy);
+}
+.phrase-answer{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:7px;
+min-height:52px;
+margin:25px auto 20px;
+}
+.phrase-slot{
+width:42px;
+height:47px;
+border-bottom:2px solid var(--burgundy);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:"Caveat",cursive;
+font-size:28px;
+color:var(--burgundy);
+}
+.phrase-space{
+width:18px;
+}
+.phrase-letters{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:8px;
+max-width:700px;
+margin:auto;
+}
+.phrase-submit{
+margin-top:25px;
+padding:11px 25px;
+border:0;
+border-radius:25px;
+background:var(--burgundy);
+color:white;
+font-family:"Caveat",cursive;
+font-size:21px;
+cursor:pointer;
+transition:.3s;
+}
+.phrase-submit:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 18px rgba(125,41,69,.2);
+}
+.success-screen{
+display:none;
+padding:70px 35px;
+}
+.success-screen.active{
+display:block;
+animation:successAppear .9s ease;
+}
+.big-heart{
+font-size:75px;
+color:var(--burgundy);
+animation:heartbeat 1.2s infinite;
+}
+.success-screen h1{
+font-family:"Caveat",cursive;
+font-size:68px;
+color:var(--burgundy);
+margin:5px 0 15px;
+}
+.success-line{
+font-size:25px;
+color:var(--burgundy);
+margin:15px 0 25px;
+}
+.success-screen>p{
+font-size:15px;
+line-height:1.9;
+color:var(--soft);
+}
+.success-screen .prize{
+font-family:"Caveat",cursive;
+font-size:31px;
+font-weight:600;
+color:var(--burgundy);
+margin-top:25px;
+}
+.success-screen .final{
+font-family:"Caveat",cursive;
+font-size:35px;
+color:var(--burgundy);
+margin-top:8px;
+}
+.home-btn{
+display:inline-block;
+margin-top:30px;
+padding:12px 25px;
+border-radius:25px;
+background:var(--burgundy);
+color:white;
+text-decoration:none;
+font-family:"Caveat",cursive;
+font-size:21px;
+transition:.3s;
+}
+.home-btn:hover{
+transform:translateY(-4px);
+}
+@keyframes appear{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+@keyframes successAppear{
+from{
+opacity:0;
+transform:scale(.92);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+@keyframes heartbeat{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.15);
+}
+}
+@media(max-width:600px){
+.game-card{
+padding:35px 15px;
+}
+.game-top h1{
+font-size:47px;
+}
+.pictures{
+gap:10px;
+}
+.picture{
+height:125px;
+}
+.picture-icon{
+font-size:43px;
+}
+.picture-text{
+font-size:16px;
+}
+.answer-slot{
+width:34px;
+}
+.letter-btn{
+width:40px;
+height:40px;
+}
+.phrase-screen{
+padding:45px 18px;
+}
+.phrase-screen h1{
+font-size:45px;
+}
+.success-screen h1{
+font-size:48px;
+}
+}
